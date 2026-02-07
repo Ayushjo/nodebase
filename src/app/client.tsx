@@ -5,12 +5,12 @@ import { useSuspenseQuery } from "@tanstack/react-query";
 
 const client = () => {
   const trpc = useTRPC();
-  const { data: hello } = useSuspenseQuery(
-    trpc.hello.queryOptions({ text: "Ayush Singh" }),
-  );
+//   const { data: hello } = useSuspenseQuery(
+//     trpc.hello.queryOptions({ text: "Ayush Singh" }),
+//   );
   return (
     <>
-      <h1>Hello Client Component ({JSON.stringify(hello)})</h1>
+      {/* <h1>Hello Client Component ({JSON.stringify(hello)})</h1> */}
     </>
   );
 };
