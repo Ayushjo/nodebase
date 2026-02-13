@@ -11,6 +11,11 @@ export const execute = inngest.createFunction(
       model: google("gemini-2.5-flash"),
       prompt: "Write a vegetarian lasagna recipe for 4 people.",
       system: "You are a chef at a 5 star restaurant",
+      experimental_telemetry: {
+        isEnabled: true,
+        recordInputs: true,
+        recordOutputs: true,
+      },
     });
 
     return steps;
