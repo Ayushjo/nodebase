@@ -35,6 +35,13 @@ const Page = () => {
       },
     }),
   );
+  const testAi = useMutation(
+    trpc.testAi.mutationOptions({
+      onSuccess: () => {
+        toast.success("job queued");
+      },
+    }),
+  );
 
   return (
     // <div className="bg-amber-300 text-2xl text-black h-full w-full">
@@ -50,8 +57,12 @@ const Page = () => {
     <>
       <h1>Hello</h1>
       <h1>{JSON.stringify(data)}</h1>
+
       <Button disabled={create.isPending} onClick={() => create.mutate()}>
         Create
+      </Button>
+      <Button disabled={testAi.isPending} onClick={() => testAi.mutate()}>
+        Test Ai
       </Button>
       <LogoutButton />
     </>
